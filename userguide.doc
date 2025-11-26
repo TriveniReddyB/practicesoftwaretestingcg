@@ -1,0 +1,3 @@
+- Cmd to run single robot file w/o have virtual poetry setup:
+#robot --outputdir results\ .\uitests\sampletest.robot
+

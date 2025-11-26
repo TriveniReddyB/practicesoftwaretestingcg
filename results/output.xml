@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.0 on win32)" generated="2025-11-26T22:41:58.138162" rpa="false" schemaversion="5">
+<suite id="s1" name="Sampletest" source="C:\trsoftpacks\repos\PRACTICESOFTWARETESTINGCG\uitests\sampletest.robot">
+<kw name="New Browser" owner="Browser" type="SETUP">
+<msg time="2025-11-26T22:41:58.321555" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\trsoftpacks\\repos\\PRACTICESOFTWARETESTINGCG\\results\\browser\\traces\\temp\\5044e6cb-3441-485a-a6ea-2d311fe05298"}</msg>
+<msg time="2025-11-26T22:41:58.437281" level="INFO">Starting Browser process C:\Users\trbika\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:60403</msg>
+<msg time="2025-11-26T22:42:00.091431" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\trsoftpacks\\repos\\PRACTICESOFTWARETESTINGCG\\results\\browser\\traces\\temp\\5044e6cb-3441-485a-a6ea-2d311fe05298"}</msg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-11-26T22:41:58.320899" elapsed="1.771039"/>
+</kw>
+<test id="s1-t1" name="Login to the application with valid credentials" line="15">
+<kw name="New Context" owner="Browser" type="SETUP">
+<msg time="2025-11-26T22:42:00.112940" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}</msg>
+<msg time="2025-11-26T22:42:00.140726" level="INFO">Successfully created context. </msg>
+<msg time="2025-11-26T22:42:00.141258" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 720, 'width': 1280}}</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-11-26T22:42:00.110695" elapsed="0.030563"/>
+</kw>
+<kw name="Login With Valid Credentials">
+<kw name="New Page" owner="Browser">
+<msg time="2025-11-26T22:42:01.191436" level="INFO">Successfully initialized new page object and opened url: https://practicesoftwaretesting.com/</msg>
+<arg>${BASE_WEBURL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-11-26T22:42:00.144666" elapsed="1.047363"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-26T22:42:01.370734" level="INFO">Waited for Element with selector text="Sign in" at state visible</msg>
+<arg>text="Sign in"</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-26T22:42:01.192029" elapsed="0.178705"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-26T22:42:01.372428" level="INFO">Clicks the element 'css=a:has-text("Sign in")'.</msg>
+<arg>css=a:has-text("Sign in")</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-26T22:42:01.371311" elapsed="0.126010"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-26T22:42:01.540729" level="INFO">Waited for Element with selector css=input[value="Login"] at state visible</msg>
+<arg>css=input[value="Login"]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-26T22:42:01.497321" elapsed="0.043408"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-11-26T22:42:01.542442" level="INFO">Fills the text 'admin@practicesoftwaretesting.com' in the given field.</msg>
+<arg>id=email</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-11-26T22:42:01.541301" elapsed="0.026044"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-11-26T22:42:01.568962" level="INFO">Fills the text 'welcome01' in the given field.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-11-26T22:42:01.567345" elapsed="0.022901"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-26T22:42:01.590834" level="INFO">Clicks the element 'css=input[value="Login"]'.</msg>
+<arg>css=input[value="Login"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-26T22:42:01.590246" elapsed="0.108479"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-26T22:42:01.709889" level="INFO">Waited for Element with selector a:has-text("Home") at state visible</msg>
+<arg>a:has-text("Home")</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-26T22:42:01.699290" elapsed="0.011197"/>
+</kw>
+<arg>${BASE_WEBURL}</arg>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-11-26T22:42:00.143658" elapsed="1.566829"/>
+</kw>
+<kw name="Close Context" owner="Browser" type="TEARDOWN">
+<msg time="2025-11-26T22:42:01.716161" level="INFO">Switching browser to CURRENT</msg>
+<msg time="2025-11-26T22:42:01.721588" level="INFO">Returned active browser id. CURRENT</msg>
+<msg time="2025-11-26T22:42:01.727322" level="INFO">Switching context to CURRENT in CURRENT</msg>
+<msg time="2025-11-26T22:42:01.731970" level="INFO">Returned active context id: CURRENT</msg>
+<msg time="2025-11-26T22:42:01.732601" level="INFO">Switching context to context=d17f76ea-f28f-46c3-a3a2-a58f7f18f551 in CURRENT</msg>
+<msg time="2025-11-26T22:42:01.744425" level="INFO">Successfully changed active context: context=d17f76ea-f28f-46c3-a3a2-a58f7f18f551</msg>
+<msg time="2025-11-26T22:42:01.802308" level="INFO">Successfully closed Context</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes a Context.</doc>
+<status status="PASS" start="2025-11-26T22:42:01.711056" elapsed="0.091252"/>
+</kw>
+<status status="PASS" start="2025-11-26T22:42:00.091938" elapsed="1.715401"/>
+</test>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2025-11-26T22:42:02.227648" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-26T22:42:01.824119" elapsed="0.404090"/>
+</kw>
+<status status="PASS" start="2025-11-26T22:41:58.140731" elapsed="4.087478"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Sampletest" id="s1" pass="1" fail="0" skip="0">Sampletest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
