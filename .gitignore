@@ -1,0 +1,15 @@
+# Ignore virtual environment
+env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Robot Framework output files
+output.xml
+log.html
+report.html
+
+# Ignore Playwright logs. these are environment-specific:
+playwright-log.txt
